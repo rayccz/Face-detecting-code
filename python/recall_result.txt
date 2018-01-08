@@ -1,0 +1,267 @@
+current boundary is: 0.5
+positive folder: 
+negative folder: 
+current boundary is: 0.5
+positive folder: 
+number: 88654
+detected positive:86141
+detected negative:2513
+negative folder: 
+number: 244436
+detected positive:3085
+detected negative:241351
+current boundary is: 0.3
+positive folder: 
+number: 88654
+detected positive:87670
+detected negative:984
+negative folder: 
+number: 244436
+detected positive:8781
+detected negative:235655
+current boundary is: 0.4
+positive folder: 
+number: 88654
+detected positive:86977
+detected negative:1677
+negative folder: 
+number: 244436
+detected positive:5113
+detected negative:239323
+current boundary is: 0.6
+positive folder: 
+number: 88654
+detected positive:85060
+detected negative:3594
+negative folder: 
+number: 244436
+detected positive:1924
+detected negative:242512
+current boundary is: 0.7
+positive folder: 
+number: 88654
+detected positive:83735
+detected negative:4919
+negative folder: 
+number: 244436
+detected positive:1210
+detected negative:243226
+current boundary is: 0.8
+positive folder: 
+number: 88654
+detected positive:81707
+detected negative:6947
+negative folder: 
+number: 244436
+detected positive:782
+detected negative:243654
+current boundary is: 0.1
+positive folder: 
+number: 88654
+detected positive:88438
+detected negative:216
+negative folder: 
+number: 244436
+detected positive:42212
+detected negative:202224
+current boundary is: 0.2
+positive folder: 
+number: 88654
+detected positive:88136
+detected negative:518
+negative folder: 
+number: 244436
+detected positive:16768
+detected negative:227668
+current boundary is: 0.9
+positive folder: 
+number: 88654
+detected positive:77654
+detected negative:11000
+negative folder: 
+number: 244436
+detected positive:458
+detected negative:243978
+recall_rate left starts here:
+current boundary is: 0.1
+positive folder: 
+number: 61236
+detected positive:60783
+detected negative:453
+negative folder: 
+number: 253402
+detected positive:8421
+detected negative:244981
+current boundary is: 0.2
+positive folder: 
+number: 61236
+detected positive:60426
+detected negative:810
+negative folder: 
+number: 253402
+detected positive:4369
+detected negative:249033
+current boundary is: 0.3
+positive folder: 
+number: 61236
+detected positive:60069
+detected negative:1167
+negative folder: 
+number: 253402
+detected positive:2833
+detected negative:250569
+current boundary is: 0.4
+positive folder: 
+number: 61236
+detected positive:59684
+detected negative:1552
+negative folder: 
+number: 253402
+detected positive:1970
+detected negative:251432
+current boundary is: 0.5
+positive folder: 
+number: 61236
+detected positive:59222
+detected negative:2014
+negative folder: 
+number: 253402
+detected positive:1426
+detected negative:251976
+current boundary is: 0.6
+positive folder: 
+number: 61236
+detected positive:58687
+detected negative:2549
+negative folder: 
+number: 253402
+detected positive:1065
+detected negative:252337
+current boundary is: 0.7
+positive folder: 
+number: 61236
+detected positive:58042
+detected negative:3194
+negative folder: 
+number: 253402
+detected positive:777
+detected negative:252625
+current boundary is: 0.8
+positive folder: 
+number: 61236
+detected positive:57106
+detected negative:4130
+negative folder: 
+number: 253402
+detected positive:520
+detected negative:252882
+current boundary is: 0.9
+positive folder: 
+number: 61236
+detected positive:55331
+detected negative:5905
+negative folder: 
+number: 253402
+detected positive:283
+detected negative:253119
+recall_rate right starts here:
+current boundary is: 0.1
+positive folder: 
+negative folder: 
+current boundary is: 0.2
+positive folder: 
+negative folder: 
+current boundary is: 0.3
+positive folder: 
+negative folder: 
+current boundary is: 0.4
+positive folder: 
+negative folder: 
+current boundary is: 0.5
+positive folder: 
+negative folder: 
+current boundary is: 0.6
+positive folder: 
+negative folder: 
+recall_rate right starts here:
+current boundary is: 0.1
+positive folder: 
+number: 51749
+detected positive:51172
+detected negative:577
+negative folder: 
+number: 218776
+detected positive:6086
+detected negative:212690
+current boundary is: 0.2
+positive folder: 
+number: 51749
+detected positive:50735
+detected negative:1014
+negative folder: 
+number: 218776
+detected positive:3192
+detected negative:215584
+current boundary is: 0.3
+positive folder: 
+number: 51749
+detected positive:50297
+detected negative:1452
+negative folder: 
+number: 218776
+detected positive:2006
+detected negative:216770
+current boundary is: 0.4
+positive folder: 
+number: 51749
+detected positive:49833
+detected negative:1916
+negative folder: 
+number: 218776
+detected positive:1333
+detected negative:217443
+current boundary is: 0.5
+positive folder: 
+number: 51749
+detected positive:49291
+detected negative:2458
+negative folder: 
+number: 218776
+detected positive:907
+detected negative:217869
+current boundary is: 0.6
+positive folder: 
+number: 51749
+detected positive:48701
+detected negative:3048
+negative folder: 
+number: 218776
+detected positive:582
+detected negative:218194
+current boundary is: 0.7
+positive folder: 
+number: 51749
+detected positive:47984
+detected negative:3765
+negative folder: 
+number: 218776
+detected positive:357
+detected negative:218419
+current boundary is: 0.8
+positive folder: 
+number: 51749
+detected positive:47054
+detected negative:4695
+negative folder: 
+number: 218776
+detected positive:210
+detected negative:218566
+current boundary is: 0.9
+positive folder: 
+number: 51749
+detected positive:45306
+detected negative:6443
+negative folder: 
+number: 218776
+detected positive:134
+detected negative:218642

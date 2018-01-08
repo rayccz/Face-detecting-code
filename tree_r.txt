@@ -1,0 +1,951 @@
+.
+├── 1.txt
+├── adaboost(adaboost模块)
+│	├── adaboost_sample
+│	│	├── all_faces(85069samples, JPG)(什么类型的测试数据？为何名为all却那么少？)
+│	│	├── build(编译生成文件)
+│	│	│	├── CMakeCache.txt
+│	│	│	├── CMakeFiles
+│	│	│	├── cmake_install.cmake
+│	│	│	├── create_pos_info.sh
+│	│	│	├── cut_sample.cpp
+│	│	│	├── exe
+│	│	│	├── Makefile
+│	│	│	├── pos_info_front.txt
+│	│	│	├── pos_info_left.txt
+│	│	│	└── pos_info_right.txt
+│	│	├── CMakeLists.txt
+│	│	├── create_sample.sh(这是什么脚本？？？) 
+│	│	├── create_sample.sh~
+│	│	├── cut_sample.cpp(这是什么代码？？？怎么个cut法) scanning window 金字塔
+│	│	├── data_info_produce_recall(这些是什么数据？)
+│	│	│	├── new_pos_info_front.txt
+│	│	│	├── new_pos_info_left.txt
+│	│	│	├── new_pos_info_right.txt
+│	│	│	├── new_pos_info.txt
+│	│	│	├── produce_training_recall_data.py
+│	│	│	└── recall_left.txt
+│	│	├── data_info_train(这些是什么数据？)
+│	│	│	├── new_pos_info_front.txt
+│	│	│	├── new_pos_info_left.txt
+│	│	│	├── new_pos_info_right.txt
+│	│	│	└── new_pos_info.txt
+│	│	├── front_pos_sample_0(52745samples, JPG)(这些是什么sample？0、1有什么区别？) 
+│	│	│	└── front_pos_info.txt
+│	│	├── front_pos_sample_1(55455samples, JPG)
+│	│	├── get_pos_info.py
+│	│	├── left_pos_sample_0(46813samples, JPG)
+│	│	├── new_front_pos_sample(51881samples, JPG)
+│	│	├── new_left_pos_sample(18910samples, JPG)
+│	│	├── new_pos_info.txt~
+│	│	├── new_right_pos_sample(18940samples, JPG)
+│	│	├── nohup.out
+│	│	├── pos_info_front.txt
+│	│	├── pos_info_left.txt
+│	│	├── pos_info_right.txt
+│	│	├── pos_info.txt
+│	│	├── right_pos_sample_0(22627samples, JPG)
+│	│	│	├── create_sample.sh
+│	│	│	└── right_pos_info.txt
+│	│	├── right_pos_sample_1(23620samples, JPG)
+│	│	├── right_profile_face_model
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	├── stage6.xml
+│	│	│	└── stage7.xml
+│	│	├── test_pos_info.txt
+│	│	├── test.py
+│	│	├── test_saved.py
+│	│	└── tmp
+│	│	    ├── a(830 imgages, JPG)
+│	│	    ├── CMakeCache.txt
+│	│	    ├── CMakeFiles
+│	│	    │	├── 2.8.12.2(CMakeFiles files)
+│	│	    │	├── 3.2.2(CMakeFiles files)
+│	│	    │	├── cmake.check_cache
+│	│	    │	├── CMakeDirectoryInformation.cmake
+│	│	    │	├── CMakeOutput.log
+│	│	    │	├── CMakeTmp
+│	│	    │	├── exe.dir
+│	│	    │	│	├── build.make
+│	│	    │	│	├── cmake_clean.cmake
+│	│	    │	│	├── cut_sample.cpp.o
+│	│	    │	│	├── CXX.includecache
+│	│	    │	│	├── DependInfo.cmake
+│	│	    │	│	├── depend.internal
+│	│	    │	│	├── depend.make
+│	│	    │	│	├── flags.make
+│	│	    │	│	├── link.txt
+│	│	    │	│	└── progress.make
+│	│	    │	├── feature_tests.bin
+│	│	    │	├── feature_tests.c
+│	│	    │	├── feature_tests.cxx
+│	│	    │	├── Makefile2
+│	│	    │	├── Makefile.cmake
+│	│	    │	├── progress.marks
+│	│	    │	└── TargetDirectories.txt
+│	│	    ├── cmake_install.cmake
+│	│	    ├── exe_hard_negative
+│	│	    ├── exe_recall
+│	│	    ├── Makefile
+│	│	    ├── negative_front_dataset(14065samples, JPG)
+│	│	    ├── negative_front_file.out
+│	│	    ├── negative_left_dataset(13835samples, JPG)
+│	│	    ├── negative_left_file.out
+│	│	    ├── negative_right_dataset(13980samples, JPG)
+│	│	    ├── negative_right_file.out
+│	│	    ├── new_pos_info_front.txt~
+│	│	    ├── nohup.out
+│	│	    ├── not_recall_file_front_dataset(307702samples, JPG)
+│	│	    ├── not_recall_file_front_dataset_0(79582samples, JPG)
+│	│	    ├── not_recall_file_right_dataset(76110samples, JPG)
+│	│	    ├── not_recall_file_right_dataset_0(4135samples, JPG)
+│	│	    ├── not_recall_front.out
+│	│	    ├── not_recall_left.out
+│	│	    ├── not_recall_right.out
+│	│	    ├── pos_info_front.txt
+│	│	    ├── pos_info_left.txt
+│	│	    ├── pos_info_right.txt
+│	│	    ├── produce_hard_negative_train_data.sh
+│	│	    ├── produce_hard_negative_train_data.sh~
+│	│	    ├── produce_not_recall_train_data.sh
+│	│	    ├── test(804samples, JPG)
+│	│	    └── test~(8484 neg samples, JPG)
+│	├── adaboost_test
+│	│	├── adaboost_test.cpp~
+│	│	├── adaboost_test_front.cpp
+│	│	├── adaboost_test_front.cpp~
+│	│	├── adaboost_test_left.cpp
+│	│	├── adaboost_test_right.cpp
+│	│	├── adaboost_test_right.cpp~
+│	│	├── build_produce
+│	│	│	├── aaa.sh
+│	│	│	├── CMakeCache.txt
+│	│	│	├── CMakeFiles
+│	│	│	├── cmake_install.cmake
+│	│	│	├── cut_image_front
+│	│	│	├── cut_image_left
+│	│	│	├── cut_image_left.out
+│	│	│	├── cut_image_right
+│	│	│	├── front.out
+│	│	│	├── Makefile
+│	│	│	├── make_train_data_right.sh
+│	│	│	├── nohup.out
+│	│	│	├── not_recall_file_front_addr.txt
+│	│	│	├── not_recall_file_front.txt
+│	│	│	├── not_recall_file_right_addr.txt
+│	│	│	├── not_recall_file_right.txt
+│	│	│	├── recall_front.txt
+│	│	│	├── recall_right.txt
+│	│	│	├── remove_negative
+│	│	│	├── result.txt
+│	│	│	└── right.out
+│	│	├── build_recall
+│	│	│	├── adaboost_test_left
+│	│	│	├── adaboost_test_left10
+│	│	│	├── average_recall.txt
+│	│	│	├── CMakeCache.txt
+│	│	│	├── CMakeFiles
+│	│	│	├── cmake_install.cmake
+│	│	│	├── find_address.py
+│	│	│	├── front.out
+│	│	│	├── Makefile
+│	│	│	├── nohup.out
+│	│	│	├── not_recall_file
+│	│	│	├── not_recall_file_front_addr.txt
+│	│	│	├── not_recall_file_front.txt
+│	│	│	├── not_recall_file_left_addr.txt
+│	│	│	├── not_recall_file_left.txt
+│	│	│	├── not_recall_file_right_addr.txt
+│	│	│	├── not_recall_file_right.txt
+│	│	│	├── observe_recall(14614samples, JPG)
+│	│	│	├── out
+│	│	│	├── process.py
+│	│	│	├── recall
+│	│	│	├── recall_chart(53 TXT files)
+│	│	│	├── recall_front.txt
+│	│	│	├── recall_left.txt
+│	│	│	├── recall_rate
+│	│	│	├── recall_rate.cpp
+│	│	│	├── recall_right.txt
+│	│	│	└── recall.sh
+│	│	├── build_t
+│	│	│	├── adaboost_test
+│	│	│	├── adaboost_test2
+│	│	│	├── adaboost_test_all
+│	│	│	├── adaboost_test_front
+│	│	│	├── adaboost_test_front10
+│	│	│	├── adaboost_test_left
+│	│	│	├── adaboost_test_left10
+│	│	│	├── adaboost_test_right
+│	│	│	├── adaboost_test_right10
+│	│	│	├── CMakeCache.txt
+│	│	│	├── CMakeFiles
+│	│	│	├── cmake_install.cmake
+│	│	│	└── Makefile
+│	│	├── build_test
+│	│	│	├── CMakeCache.txt
+│	│	│	├── CMakeFiles
+│	│	│	├── cmake_install.cmake
+│	│	│	├── CMakeLists.txt
+│	│	│	├── CMakeList.txt~
+│	│	│	├── Makefile
+│	│	│	└── test
+│	│	├── CMakeLists.txt
+│	│	├── CMakeLists.txt~
+│	│	├── CMakeLists.txt_recall
+│	│	├── CMakeLists.txt_temp
+│	│	├── cut_image.cpp
+
+│	│	├── front_test
+│	│	│	├── negative(244437 samples, JPG)
+│	│	│	└── positive(88655 samples, JPG)
+│	│	├── left_test
+│	│	│	├── negative(253402 samples, JPG)
+│	│	│	└── positive(61235 samples, JPG)
+│	│	├── new_front_negative(2580782 samples, JPG)
+│	│	├── new_front_positive(989218 samples, JPG)
+│	│	├── new_left_negative(2735865 samples, JPG)
+│	│	├── new_left_positive(679274 samples, JPG)
+│	│	├── new_negative(empty)
+│	│	├── new_negative_file_log_front.txt
+│	│	├── new_negative_file_log_left.txt
+│	│	├── new_negative_file_log_right.txt
+│	│	├── new_negative_file_log.txt
+│	│	├── new_positive(140 samples, JPG)
+│	│	├── new_positive_file_log_front.txt
+│	│	├── new_positive_file_log_left.txt
+│	│	├── new_positive_file_log_right.txt
+│	│	├── new_positive_file_log.txt
+│	│	├── new_right_negative(2524735 samples, JPG)
+│	│	├── new_right_positive(564421 samples, JPG)
+│	│	├── nohup.out
+│	│	├── opencv2
+│	│	│	└── opencv_modules.hpp
+│	│	├── positive_negative_file_lfr
+│	│	├── recall_rate.cpp
+│	│	├── recall_rate.h
+│	│	├── right_test
+│	│	│	├── negative(218776 samples, JPG)
+│	│	│	└── positive(51749 samples, JPG)
+│	│	├── sort2.cpp
+│	│	├── sort_negative.cpp
+│	│	├── sort_tool
+│	│	│	├── sort
+│	│	│	├── sort2
+│	│	│	├── sort2.cpp~
+│	│	│	├── sort3
+│	│	│	└── sort_negative.cpp~
+│	│	├── test.txt~
+│	│	├── trash(557132 JPG)
+│	│	│	└── nohup.out
+│	│	├── trash0(2634202 JPG)
+│	│	├── trash1(740513 JPG)
+│	│	├── unix-install
+│	│	│	├── OpenCVConfig.cmake
+│	│	│	├── OpenCVConfig-version.cmake
+│	│	│	└── opencv.pc
+│	│	├── utility.cpp
+│	│	└── utility.h
+│	├── adaboost_train
+│	│	├── aaaaaaaaaaaaaaaaaaaaaaaaaaaaa.sh
+│	│	├── a.sh
+│	│	├── create_front_postive_vec.sh
+│	│	├── create_front_postive_vec.sh~
+│	│	├── create_left_postive_vec.sh
+│	│	├── create_left_postive_vec.sh~
+│	│	├── create_right_postive_vec.sh
+│	│	├── create_right_postive_vec.sh~
+│	│	├── front.log
+│	│	├── front_pos_example.vec
+│	│	├── front_pos_example.vec_0
+│	│	├── front_pos_sample(67190 samples, JPG)
+│	│	│	└── pos_info_front.txt
+│	│	├── front_pos_sample~(51880 samples, JPG)
+│	│	│	└── pos_info_front.txt
+│	│	├── front_profile_face_model
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	├── stage6.xml
+│	│	│	└── stage7.xml
+│	│	├── front_profile_face_model~
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	├── stage6.xml
+│	│	│	├── stage7.xml
+│	│	│	├── stage8.xml
+│	│	│	└── stage9.xml
+│	│	├── lbp_neg(41092 samples, JPG)
+│	│	│	└── neg_list.txt
+│	│	├── lbp_neg_front(55156 samples, JPG)
+│	│	│	└── neg_list.txt
+│	│	├── lbp_neg_left(54928 samples, JPG)
+│	│	│	└── neg_list.txt
+│	│	├── lbp_neg_right(55072 samples, JPG)
+│	│	│	└── neg_list.txt
+│	│	├── left.log
+│	│	├── left_pos_example.vec
+│	│	├── left_pos_example.vec~
+│	│	├── left_pos_example.vec_0
+│	│	├── left_pos_sampe~
+│	│	│	├── (18917 samples, JPG)
+│	│	│	├── left_pos_sample(18910 samples, JPG)
+│	│	│	│	└── pos_info_left.txt
+│	│	│	└── pos_info_left.txt
+│	│	├── left_pos_sample(22395 samples, JPG)
+│	│	│	└── pos_info_left.txt
+│	│	├── left_profile_face_model
+│	│	│	├── cascade.xml
+│	│	│	├── cascade.xml~~
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	└── stage6.xml
+│	│	├── left_profile_face_model~
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	├── stage6.xml
+│	│	│	├── stage7.xml
+│	│	│	├── stage8.xml
+│	│	│	└── stage9.xml
+│	│	├── left_profile_face_model_0
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	└── stage6.xml
+│	│	├── neg_1(haar 6 zip)
+│	│	├── neg_2(6542 samples, JPG)
+│	│	├── neg_3(3720 samples, JPG)
+│	│	├── neg_list_front.txt
+│	│	├── neg_list_left.txt
+│	│	├── neg_list_right.txt
+│	│	├── neg_list.txt
+│	│	├── nohup.out
+│	│	├── pic_1(13295 samples, JPG)
+│	│	├── recall_negative.tar.gz
+│	│	├── right.log
+│	│	├── right_pos_example.vec
+│	│	├── right_pos_example.vec~
+│	│	├── right_pos_example.vec_0
+│	│	├── right_pos_sampe~(18941 samples, JPG)
+│	│	│	└── pos_info_right.txt
+│	│	├── right_pos_sample(23076 samples, JPG)
+│	│	├── right_pos_sample~(18940 samples, JPG)
+│	│	│	└── pos_info_right.txt
+│	│	├── right_profile_face_model
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	└── stage6.xml
+│	│	├── right_profile_face_model~
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	├── stage6.xml
+│	│	│	├── stage7.xml
+│	│	│	├── stage8.xml
+│	│	│	└── stage9.xml
+│	│	├── right_profile_face_model_0
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	├── stage6.xml
+│	│	│	└── stage7.xml
+│	│	├── train_front_cascade.sh
+│	│	├── train_front_cascade.sh~
+│	│	├── train_left_cascade.sh
+│	│	├── train_left_cascade.sh~
+│	│	├── train_negative_recall.sh
+│	│	├── train_right_cascade.sh
+│	│	├── train_right_cascade.sh~
+│	│	└── vec.tar.gz
+│	├── aflw
+│	│	├── 0.txt
+│	│	├── aflwdb.py
+│	│	├── data
+│	│	│	├── aflw-changelog.txt
+│	│	│	├── aflw.sqlite
+│	│	│	├── error(594 JPG)
+│	│	│	├── flickr(42256 samples, JPG)
+│	│	│	├── new(16802 samples, JPG)
+│	│	│	└── Untitled Folder(3553 JPG)
+│	│	├── file.txt
+│	│	├── test.py
+│	│	└── ubuntu -> /ubuntu/
+│	├── compress_file
+│	├── neg_frame
+│	│	├── CMakeLists.txt
+│	│	├── frame
+│	│	├── frame.cpp
+│	│	├── new_negative_file_log_front.txt
+│	│	├── new_negative_file_log_left.txt
+│	│	├── new_negative_file_log_right.txt
+│	│	├── out_negative_file_log_front.txt
+│	│	├── out_negative_file_log_left.txt
+│	│	├── out_negative_file_log_right.txt
+│	│	└── test.sh
+│	├── opencv-2.4.10
+│	│	└── (open cv lib files)
+│	├── origin_zhouwenxua
+│	│	└── (？？？)
+│	├── pedestrian (？？？)
+│	│	├── create_pos_vectors.sh
+│	│	├── detection
+│	│	│	├── adaResults
+│	│	│	│	├── adaboost_Result
+│	│	│	│	├── adaboost_Result.cpp
+│	│	│	│	├── adaResults(1141 samples, JPG)
+│	│	│	│	├── cascade.xml
+│	│	│	│	├── CMakeCache.txt
+│	│	│	│	├── CMakeFiles
+│	│	│	│	├── cmake_install.cmake
+│	│	│	│	├── CMakeLists.txt
+│	│	│	│	├── cutGraphs(1358 JPG)
+│	│	│	│	├── cutGraphs1(260 JPG)
+│	│	│	│	│	└── cutResult.txt
+│	│	│	│	└── Makefile
+│	│	│	├── CMakeCache.txt
+│	│	│	├── CMakeFiles
+│	│	│	├── cutGraphs(246 JPG)
+│	│	│	│	└── cutResult.txt
+│	│	│	├── cutGraphs1(145 JPG)
+│	│	│	│	└── cutResult.txt
+│	│	│	├── cutGraphs2(143 JPG)
+│	│	│	├── drawRect
+│	│	│	│	├── CMakeCache.txt
+│	│	│	│	├── CMakeFiles
+│	│	│	│	├── cmake_install.cmake
+│	│	│	│	├── CMakeLists.txt
+│	│	│	│	├── CNN.txt
+│	│	│	│	├── cutGraphs(216 JPG)
+│	│	│	│	│	└── cutResult.txt
+│	│	│	│	├── cutGraphs.tar.gz
+│	│	│	│	├── drawRect
+│	│	│	│	├── drawRect.cpp
+│	│	│	│	├── Makefile
+│	│	│	│	├── ouputForSB.txt
+│	│	│	│	└── output.txt
+│	│	│	├── Makefile
+│	│	│	├── pedestrian_detection
+│	│	│	├── pedestrian_detection.cpp
+│	│	│	├── Results(5544 JPG)
+│	│	│	└── Results.tar.gz
+│	│	├── FirstModel
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage10.xml
+│	│	│	├── stage11.xml
+│	│	│	├── stage12.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	├── stage6.xml
+│	│	│	├── stage7.xml
+│	│	│	├── stage8.xml
+│	│	│	└── stage9.xml
+│	│	├── FourthModel
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	└── stage4.xml
+
+│	│	├── FourthVector.vec
+│	│	├── negative(86643 samples, JPG)
+│	│	├── negative.txt
+│	│	├── positive(78566 samples, JPG)
+│	│	│	└── FifthModel
+│	│	├── positive.txt
+│	│	├── SecondModel
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage10.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	├── stage6.xml
+│	│	│	├── stage7.xml
+│	│	│	├── stage8.xml
+│	│	│	└── stage9.xml
+│	│	├── SecondVector.vec
+│	│	├── ThirdModel
+│	│	│	├── cascade.xml
+│	│	│	├── params.xml
+│	│	│	├── stage0.xml
+│	│	│	├── stage1.xml
+│	│	│	├── stage2.xml
+│	│	│	├── stage3.xml
+│	│	│	├── stage4.xml
+│	│	│	├── stage5.xml
+│	│	│	└── stage6.xml
+│	│	└── ThirdVector.vec
+│	├── sjtu(????)
+│	│	├── Adaboost.txt
+│	│	├── annotations
+│	│	│	├── gt_bb_00.csv
+│	│	│	├── gt_bb_01.csv
+│	│	│	├── gt_bb_02.csv
+│	│	│	├── gt_bb_03.csv
+│	│	│	├── gt_bb_04.csv
+│	│	│	├── gt_bb_05.csv
+│	│	│	├── gt_bb_06.csv
+│	│	│	├── gt_bb_07.csv
+│	│	│	├── gt_bb_08.csv
+│	│	│	├── gt_bb_09.csv
+│	│	│	└── gt_bb_10.csv
+│	│	├── annotations(1).txt
+│	│	├── data
+│	│	│	├── aflw-changelog.txt
+│	│	│	├── aflw.sqlite
+│	│	│	└── flickr
+│	│	│	    ├── 0.tar
+│	│	│	    ├── 2.tar
+│	│	│	    └── 3.tar
+│	│	├── DbQuery.txt
+│	│	├── face_cascade_example.tar
+│	│	├── ICF Related papers.txt
+│	│	└── scripts
+│	│	    ├── create_pos_vectors.sh
+│	│	    ├── DbQuery.py
+│	│	    └── train_cascade.sh
+│	├── sjtu2.pem
+│	└── temp_zhouwenxuan
+│	    ├── (前前组遗产？)
+├── a.mp4
+├── b.mp4
+├── caffe
+│	├── build -> .build_release
+│	└── caffe库文件
+├── cnn_train_models
+│	├── face_iter_1034000.caffemodel
+│	├── figure_front.png
+│	├── figure_left.png
+│	├── model_1120
+│	│	└── face_iter_348000.caffemodel
+│	├── model_front(60 caffemodel&solverstate)
+│	├── model_left(60 caffemodel&solverstate)
+│	├── model_right(120 caffemodel&solverstate) 数量奇怪？？
+│	├── train_front
+│	│	├── create_list
+│	│	├── create_list.cpp
+│	│	├── create_list.cpp~
+│	│	├── create_lmdb.sh
+│	│	├── create_lmdb.sh~
+│	│	├── create_meanfile.sh
+│	│	├── create_meanfile.sh~
+│	│	├── face_deploy2.prototxt
+│	│	├── face_deploy2.prototxt~
+│	│	├── face_deploy.prototxt
+│	│	├── face_mean.binaryproto
+│	│	├── face_mean.npy
+│	│	├── face_test_lmdb
+│	│	├── face_test.prototxt
+│	│	├── face_test.prototxt~
+│	│	├── face_train_lmdb
+│	│	├── face_train.prototxt
+│	│	├── face_train.prototxt~
+│	│	├── labels.txt
+│	│	├── mult_solver.prototxt
+│	│	├── mult_solver.prototxt~
+│	│	├── README
+│	│	├── README~
+│	│	├── test3.sh
+│	│	├── test3.sh~
+│	│	├── test3.txt
+│	│	├── tmp_neg.txt
+│	│	├── tmp_pos.txt
+│	│	├── train3.sh
+│	│	├── train3.txt
+│	│	├── try.py
+│	│	├── try.py~
+│	│	├── t.sh
+│	│	└── t.sh~
+│	├── train_left
+│	│	├── create
+│	│	├── create_list
+│	│	├── create_list.cpp
+│	│	├── create_list.cpp~
+│	│	├── create_lmdb.sh
+│	│	├── create_lmdb.sh~
+│	│	├── create_meanfile.sh
+│	│	├── create_meanfile.sh~
+│	│	├── face2_train_lmdb
+│	│	├── face_deploy2.prototxt
+│	│	├── face_deploy2.prototxt~
+│	│	├── face_deploy.prototxt
+│	│	├── face_deploy.prototxt~
+│	│	├── face_mean.binaryproto
+│	│	├── face_mean.npy
+│	│	├── face_test_lmdb
+│	│	├── face_test.prototxt
+│	│	├── face_test.prototxt~
+│	│	├── face_train_lmdb
+│	│	├── face_train.prototxt
+│	│	├── face_train.prototxt~
+│	│	├── labels.txt
+│	│	├── mult_solver.prototxt
+│	│	├── mult_solver.prototxt~
+│	│	├── test3.sh
+│	│	├── test3.sh~
+│	│	├── test3.txt
+│	│	├── tmp_neg.txt
+│	│	├── tmp_pos.txt
+│	│	├── train3.sh
+│	│	├── train3.txt
+│	│	├── trat.txt
+│	│	├── try.py
+│	│	└── try.py~
+│	└── train_right
+│	    ├── create
+│	    ├── create_list
+│	    ├── create_list.cpp
+│	    ├── create_list.cpp~
+│	    ├── create_lmdb.sh
+│	    ├── create_lmdb.sh~
+│	    ├── create_meanfile.sh
+│	    ├── create_meanfile.sh~
+│	    ├── cut
+│	    ├── cut_list.cpp
+│	    ├── cut_list.cpp~
+│	    ├── face2_train_lmdb
+│	    ├── face_deploy2.prototxt
+│	    ├── face_deploy2.prototxt~
+│	    ├── face_deploy.prototxt
+│	    ├── face_mean.binaryproto
+│	    ├── face_mean.npy
+│	    ├── face_test_lmdb
+│	    ├── face_test.prototxt
+│	    ├── face_test.prototxt~
+│	    ├── face_train2.prototxt
+│	    ├── face_train2.prototxt~
+│	    ├── face_train_lmdb
+│	    ├── face_train.prototxt
+│	    ├── face_train.prototxt~
+│	    ├── labels.txt
+│	    ├── mult_solver2_lr2.prototxt
+│	    ├── mult_solver2_lr2.prototxt~
+│	    ├── mult_solver2_lr3.prototxt
+│	    ├── mult_solver2_lr3.prototxt~
+│	    ├── mult_solver2_lr4.prototxt
+│	    ├── mult_solver2_lr4.prototxt~
+│	    ├── mult_solver2.prototxt
+│	    ├── mult_solver2.prototxt~
+│	    ├── mult_solver_lr2.prototxt
+│	    ├── mult_solver_lr2.prototxt~
+│	    ├── mult_solver_lr3.prototxt
+│	    ├── mult_solver_lr3.prototxt~
+│	    ├── mult_solver_lr4.prototxt
+│	    ├── mult_solver_lr4.prototxt~
+│	    ├── mult_solver.prototxt
+│	    ├── mult_solver.prototxt~
+│	    ├── README
+│	    ├── README~
+│	    ├── test3.sh
+│	    ├── test3.sh~
+│	    ├── test3.txt
+│	    ├── tmp_neg.txt
+│	    ├── tmp_pos.txt
+│	    ├── tmp_train.sh
+│	    ├── tmp_train.sh~
+│	    ├── train3.sh
+│	    ├── train3.txt
+│	    ├── train4.txt
+│	    ├── train_face.log
+│	    ├── train_face.sh
+│	    ├── train_face.sh~
+│	    ├── tra.txt
+│	    ├── try.py
+│	    └── try.py~
+├── codes（这是啥？？）
+│	├── cnn
+│	│	├── front
+│	│	│	├── create_list.cpp
+│	│	│	├── create_lmdb.sh
+│	│	│	├── create_meanfile.sh
+│	│	│	├── face_deploy2.prototxt
+│	│	│	├── face_iter_1086450.caffemodel
+│	│	│	├── face_mean.binaryproto
+│	│	│	├── face_test.prototxt 测试数据
+│	│	│	├── face_train.prototxt cnn训练参数
+│	│	│	├── figure_front.png
+│	│	│	├── labels.txt
+│	│	│	├── mult_solver.prototxt
+│	│	│	├── README
+│	│	│	├── README~
+│	│	│	├── test3.sh
+│	│	│	└── try.py
+│	│	├── left
+│	│	│	├── face_iter_1038840.caffemodel
+│	│	│	├── face_mean.binaryproto
+│	│	│	├── figure_left.png
+│	│	│	└── mult_solver.prototxt
+│	│	├── right
+│	│	│	├── face_iter_946770.caffemodel
+│	│	│	├── face_mean.binaryproto
+│	│	│	└── mult_solver.prototxt
+│	│	├── tips
+│	│	└── tips~
+│	├── NMS
+│	│	├── picture.cpp
+│	│	├── picture_v2.cpp
+│	│	├── picture_v3.cpp
+│	│	├── picture_v4.cpp
+│	│	├── picture_v5.cpp
+│	│	├── picture_v6.cpp
+│	│	├── picture_v7.cpp
+│	│	└── README
+│	└── pipeline
+│	    ├── adaboost_test_front.cpp
+│	    ├── adaboost_test_left.cpp
+│	    ├── adaboost_test_right.cpp
+│	    ├── parallel_fast.sh
+│	    ├── parallel_more.sh
+│	    ├── README
+│	    ├── README~
+│	    ├── test_pl_front.py
+│	    ├── test_pl_left.py
+│	    └── test_pl_right.py
+├── combine
+├── copy_file.sh
+├── demo.sh
+├── detection.tar
+├── expo
+│	└── picture.jpg
+├── expo_result
+│	└── picture.jpg
+├── final
+├── final2
+├── final2.cpp
+├── final3
+├── final3.cpp
+├── final.cpp
+├── front_profile_face_model
+│	├── cascade.xml
+│	├── params.xml
+│	├── stage0.xml
+│	├── stage1.xml
+│	├── stage2.xml
+│	├── stage3.xml
+│	├── stage4.xml
+│	├── stage5.xml
+│	├── stage6.xml
+│	└── stage7.xml
+├── gakki (测试用)
+├── gakki_10(测试用)
+├── gakki (copy)(测试用)
+├── gakki_out(测试用)
+├── gg(100 JPG)
+├── haarcascade_eye_tree_eyeglasses.xml
+├── haarcascade_frontalface_alt.xml
+├── image00002_13.jpg
+├── left_profile_face_model
+│	├── cascade.xml
+│	├── face
+│	│	├── f1.jpg
+│	│	├── f2.jpg
+│	│	├── f3.jpg
+│	│	├── f4.jpg
+│	│	├── f5.jpg
+│	│	├── f6.jpg
+│	│	├── f7.jpg
+│	│	└── f8.jpg
+│	├── params.xml
+│	├── stage0.xml
+│	├── stage1.xml
+│	├── stage2.xml
+│	├── stage3.xml
+│	├── stage4.xml
+│	├── stage5.xml
+│	└── stage6.xml
+├── natsort-5.0.1
+│	└── natsort库
+├── natsort-5.0.1.zip
+├── newcombine
+├── newcombine2.cpp
+├── newcombine.cpp
+├── nohup.out
+├── out10.avi
+├── outsayaka.avi
+├── pipeline
+│	├── 1316.jpg
+│	├── 811.jpg
+│	├── AdaBoost_to_CNN
+│	│	├── 12.jpg
+│	│	├── adaboost_test2
+│	│	├── adaboost_test_all
+│	│	├── adaboost_test_front
+│	│	├── adaboost_test_front10
+│	│	├── adaboost_test_left
+│	│	├── adaboost_test_left10
+│	│	├── adaboost_test_left32
+│	│	├── adaboost_test_right
+│	│	├── adaboost_test_right10
+│	│	├── detected_faces(many JPG)
+│	│	├── faces_log32.txt
+│	│	├── faces_log811.txt
+│	│	├── faces_log_before.txt
+│	│	├── faces_log_front.txt
+│	│	├── faces_log_left.txt
+│	│	├── faces_log_right.txt
+│	│	├── faces_log_tmp.txt
+│	│	├── faces_log.txt
+│	│	├── faces_log.txt~
+│	│	├── sedcb7Une
+│	│	└── tmp.txt
+│	├── adaboost_train
+│	├── adaboost_train_data
+│	├── build
+│	│	├── CMakeCache.txt
+│	│	├── CMakeFiles
+│	│	├── cmake_install.cmake
+│	│	├── Makefile
+│	│	├── Makefile~
+│	│	├── make.sh
+│	│	├── make.sh~
+│	│	├── output.jpg
+│	│	└── picture
+│	├── cifar
+│	├── cifar_train
+│	├── cifar_train_data
+│	├── CMakeLists.txt
+│	├── CMakeLists.txt~
+│	├── create_lmdb.sh
+│	├── face76.txt
+│	├── face_result2.txt
+│	├── face_result3.txt
+│	├── face_result4.txt
+│	├── face_result.txt
+│	├── face_result.txt~
+│	├── image_result_2
+│	├── image_test
+│	│	├── image_download.py
+│	│	├── image_download.py~
+│	│	├── image_info.txt
+│	│	├── image_info.txt~
+│	│	└── new.py~
+│	├── NMS  test时的不同version
+│	│	├── picture.cpp
+│	│	├── picture_v2.cpp
+│	│	├── picture_v3.cpp
+│	│	├── picture_v4.cpp
+│	│	├── picture_v5.cpp
+│	│	├── picture_v6.cpp
+│	│	├── picture_v7.cpp
+│	│	└── README
+│	├── o1.jpg
+│	├── o2.jpg
+│	├── output.jpg
+│	├── parallel_all.sh
+│	├── parallel_all.sh~
+│	├── parallel_fast.sh
+│	├── parallel_fast.sh~
+│	├── parallel_front.sh
+│	├── parallel_front.sh~
+│	├── parallel_left.sh
+│	├── parallel_left.sh~
+│	├── parallel_more.sh
+│	├── parallel_more.sh~
+│	├── parallel_right.sh
+│	├── parallel_right.sh~
+│	├── picture
+│	├── picture.cpp
+│	├── picture.cpp~
+│	├── picture_v1.cpp
+│	├── pip2.sh
+│	├── pipe_front.sh
+│	├── pipe_front.sh~
+│	├── pipeline
+│	├── pipeline.sh 脚本调用全部流程
+│	├── pipeline.sh~
+│	├── pipe_parallel.sh~
+│	├── pipe_para_right.sh~
+│	├── r1.txt
+│	├── README
+│	├── README~
+│	├── result_1124(many JPG)
+│	├── result_1124_2(many JPG)
+│	├── result_front(many JPG)
+│	├── result_left(many JPG)
+│	├── result_right(many JPG)
+│	└── result_T(many JPG)
+├── real
+├── real.cpp
+├── right_profile_face_model
+│	├── cascade.xml
+│	├── params.xml
+│	├── stage0.xml
+│	├── stage1.xml
+│	├── stage2.xml
+│	├── stage3.xml
+│	├── stage4.xml
+│	├── stage5.xml
+│	├── stage6.xml
+│	└── stage7.xml
+├── setuptools-29.0.1
+│	└── setuptools库（何用？）
+├── setuptools-29.0.1.zip
+├── testtt.txt
+├── time_out.txt
+├── tree.txt
+├── vegetable(many JPG)
+├── vegetable10(many JPG)
+├── video
+└── video.cpp
+
+1824 directories, 16540549 files
